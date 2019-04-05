@@ -61,7 +61,7 @@ describe('Auth Guard', () => {
 });
 </code-example>
 
-### Example: Effect using state
+### Example: Effect injecting state
 
 The mock store can simplify testing Effects that inject State using the RxJs `withLatestFrom` operator.  The example below shows the `addBookToCollectionSuccess$` effect displaying a different alert depending on the number of books in the collection state.
 
