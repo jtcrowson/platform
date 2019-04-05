@@ -9,6 +9,8 @@ You can write tests validating behaviors corresponding to the specific state sna
 
 **Note:** All dispatched actions don't affect to the state, but you can see them in the `Actions` stream.
 
+</div>
+
 ### Example: Auth Guard
 
 Usage: 
@@ -61,7 +63,7 @@ describe('Auth Guard', () => {
 
 ### Example: Effect using state
 
-The mock store can simply testing Effects that inject State using the RxJs `withLatestFrom` operator.  The example below shows the `addBookToCollectionSuccess$` effect displaying a different alert depending on the number of books in the collection state a `addBookSuccess` action is emitted.
+The mock store can simplify testing Effects that inject State using the RxJs `withLatestFrom` operator.  The example below shows the `addBookToCollectionSuccess$` effect displaying a different alert depending on the number of books in the collection state.
 
 <code-example header="collection.effects.ts">
 import { Injectable } from '@angular/core';
@@ -97,7 +99,7 @@ export class CollectionEffects {
 }
 </code-example>
 
-In our test, we can use the mock store to adjust the number of books in the collection.  We provide the `MockStore` an initial state with one book. When testing two or more books, we provide a different state using `setState()`.
+In our test, we can use the mock store to adjust the number of books in the collection.  We provide the `MockStore` an initial state containing one book. When testing the effect when two or more books are in the collection, we provide a different state using `setState()`.
 
 <code-example header="collection.effects.spec.ts">
 import { TestBed } from '@angular/core/testing';
